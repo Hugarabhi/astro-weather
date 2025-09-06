@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroWeather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <div class="page-container">
+        <!-- Top-level Header for the entire page -->
+        <h1 class="page-header">AstroWeather</h1>
+
+        <!-- About Us Page - Displayed initially -->
+        <div id="about-page-container" class="about-page">
+            <header>
+                <h1 style="font-size: 3rem; margin-bottom: 10px; text-align: center;">AstroWeather</h1>
+                <p style="text-align: center; font-style: italic; opacity: 0.8;">Your personal weather companion.</p>
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid rgba(255,255,255,0.2);">
+            </header>
+            
+            <section style="margin-top: 20px;">
+                <p>Welcome to our Smart Weather Forecasting Web Application, a modern platform designed to provide you with accurate, real-time weather updates anytime, anywhere. Built using HTML, CSS, and JavaScript, and powered by the OpenWeatherMap API, this application is more than just a forecast tool—it’s your personal weather companion.</p>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2>🌤 Key Highlights</h2>
+                <ul style="margin-top: 20px;">
+                    <li>
+                        <i class="fas fa-sun"></i>
+                        <h3>Live Weather Updates</h3>
+                        <p>Instantly view temperature, humidity, wind speed, and more with just a click.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-location-arrow"></i>
+                        <h3>Location-Based Forecasts</h3>
+                        <p>Automatically detects your current location to provide personalized weather data.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>5-Day Forecast</h3>
+                        <p>Plan ahead with detailed forecasts for the next five days.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-search-location"></i>
+                        <h3>City Search Functionality</h3>
+                        <p>Check the weather for any city around the world with our simple, user-friendly search feature.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2>🎨 Why Our App Stands Out</h2>
+                <div class="card-section">
+                    <div class="card">
+                        <h3>Clean & Responsive</h3>
+                        <p>A clean and responsive design ensures smooth usage on desktops, tablets, and mobile devices.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Dynamic Visuals</h3>
+                        <p>Dynamic visuals and weather-based themes bring the forecast to life (sunny, cloudy, rainy, or snowy).</p>
+                    </div>
+                    <div class="card">
+                        <h3>Seamless Experience</h3>
+                        <p>Simple navigation, fast loading, and real-time updates create a seamless user experience.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2>⚡ Our Mission</h2>
+                <div class="mission-section">
+                    <p>We believe that weather should be accessible, accurate, and engaging. Whether you’re planning a trip, preparing for work, or just curious about the skies above, our app delivers the insights you need in a way that feels modern, reliable, and personalized.</p>
+                </div>
+            </section>
+
+            <section style="margin-top: 40px;">
+                <h2>🚀 Technology Behind the Scenes</h2>
+                <div class="tech-section">
+                    <p>This web app leverages the power of OpenWeatherMap API for live weather data, combined with HTML for structure, CSS for design, and JavaScript for interactivity. We’ve also integrated advanced features like geolocation, dynamic updates, and responsive design to make it future-ready and user-friendly.</p>
+                    <p style="margin-top: 15px; font-weight: bold; font-style: italic;">✨ Your weather, your way — always accurate, always accessible.</p>
+                </div>
+            </section>
+            
+            <a href="#" class="back-btn" id="back-to-app-btn">Back to App</a>
+        </div>
+
+
+        <!-- Main Content Area -->
+        <div id="main-app-container" class="weather-app">
+            <header class="app-header">
+                <h1 class="logo">WeatherSense</h1>
+                <div class="controls">
+                    <div class="search-container">
+                        <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                        <button id="search-btn" class="control-btn" title="Search"><i class="fas fa-search"></i></button>
+                    </div>
+                    <button id="location-btn" class="control-btn" title="Get my location"><i class="fas fa-location-crosshairs"></i></button>
+                    <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle dark/light mode">☀️</button>
+                </div>
+            </header>
+
+            <div id="status-message" class="error-message" style="display: none;"></div>
+            
+            <div class="main-content">
+                <div id="main-weather" class="main-weather-card">
+                    <!-- Main weather info will be dynamically inserted here -->
+                </div>
+            </div>
+            
+            <div class="recent-searches">
+                <h3>Recent Searches</h3>
+                <div id="recent-searches-container">
+                    <!-- Recent search tags will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div id="forecast-container" class="forecast-container">
+                    <!-- Forecast cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="social-links">
+                <a href="https://github.com/Hugarabhi" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="http://linkedin.com/in/abhi-11435aru" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:avinashhugar299@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://abhiwebdesign.great-site.net/" title=""><i class="fas fa-globe-americas"></i></a>
+            </div>
+            <div class="info-links">
+                <a href="#" id="about-link">About Us</a>
+            </div>
+            <span>© 2025 AstroWeather. All rights reserved.</span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
